@@ -1,31 +1,45 @@
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
-"Plug 'ycm-core/YouCompleteMe'
-Plug 'joshdick/onedark.vim'
+
+" Theme 
+Plug 'joshdick/onedark.vim'     "OneDark 
+Plug 'morhetz/gruvbox'          "Gruvbox
 
 " Terminal
-  Plug 'voldikss/vim-floaterm'                  " Float terminal
+Plug 'voldikss/vim-floaterm'    " Float terminal
 
-Plug 'jackguo380/vim-lsp-cxx-highlight'
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'scrooloose/nerdtree'
-"Plug 'tsony-tsonev/nerdtree-git-plugin'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
-Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
-Plug 'scrooloose/nerdcommenter' "Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'morhetz/gruvbox'
+" Status bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
+
+" Code intellisense
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jiangmiao/auto-pairs'      " Parenthesis auto 
+
+" File browser
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
+
+Plug 'scrooloose/nerdcommenter' 
+
+" Code syntax highlight
+Plug 'jackguo380/vim-lsp-cxx-highlight'
+
+
+Plug 'airblade/vim-gitgutter'
+Plug 'c#5c6370trlpvim/ctrlp.vim' " fuzzy find files
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
+
+
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'projekt0n/github-nvim-theme', { 'tag': 'v0.0.7' }
-" Initialize plugin system
+"Plug 'tsony-tsonev/nerdtree-git-plugin'
+"Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+"Plug 'ycm-core/YouCompleteMe'
+"Initialize plugin system
 call plug#end()
 
 set bg=dark
@@ -96,7 +110,7 @@ set number
 let g:airline_powerline_fonts = 1
 "let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 "let g:NERDTreeGitStatusNodeColorization = 1
-"let g:NERDTreeColorMapCustom = {
+let g:NERDTreeColorMapCustom = {
     "\ "Staged"    : "#0ee375",  
     "\ "Modified"  : "#d9bf91",  
     "\ "Renamed"   : "#51C9FC",  
@@ -105,7 +119,7 @@ let g:airline_powerline_fonts = 1
     "\ "Dirty"     : "#FFBD61",  
     "\ "Clean"     : "#87939A",   
     "\ "Ignored"   : "#808080",    
-"\}                         
+    \}                         
 
 
 let g:NERDTreeIgnore = ['^node_modules$']
@@ -130,8 +144,8 @@ noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
 set smarttab
 set cindent
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 " always uses spaces instead of tab characters
 set expandtab
 set laststatus=2
