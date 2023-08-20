@@ -2,6 +2,12 @@
 call plug#begin('~/.vim/plugged')
 "Plug 'ycm-core/YouCompleteMe'
 Plug 'joshdick/onedark.vim'
+
+" Terminal
+  Plug 'voldikss/vim-floaterm'                  " Float terminal
+
+Plug 'jackguo380/vim-lsp-cxx-highlight'
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
 "Plug 'tsony-tsonev/nerdtree-git-plugin'
@@ -289,3 +295,10 @@ vnoremap <Esc>tC :call nerdcommenter#Comment(0, "toggle")<CR>
 
 nnoremap <D-/> :call NERDComment(0, "toggle")<CR>
 vnoremap <D-/> :call nerdcommenter#Comment(0, "toggle")<CR>
+
+let g:lsp_cxx_hl_use_text_props = 1
+
+" Other setting
+for setting_file in split(glob(stdpath('config').'/settings/*.vim'))
+  execute 'source' setting_file
+endfor
