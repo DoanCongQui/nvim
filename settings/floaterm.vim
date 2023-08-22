@@ -22,12 +22,12 @@ autocmd User FloatermOpen        " triggered after opening a new/existed floater
 " => Hotkey to manage terminals
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Open a new terminal 
-nnoremap <silent>   <F9>    :FloatermNew<CR>
-tnoremap <silent>   <F5>    <C-\><C-n>:FloatermNew<CR>
+nnoremap <silent>   <C-]>    :FloatermNew<CR>
+tnoremap <silent>   <C-]>    <C-\><C-n>:FloatermNew<CR>
 
 
-nmap <silent>   <C-F9>    :FloatermKill<CR>
-tnoremap <silent>   <C-F9>    <C-\><C-n>:FloatermKill<CR>
+nnoremap <silent>   <A-]>    :FloatermKill<CR>
+tnoremap <silent>   <A-]>    <C-\><C-n>:FloatermKill<CR>
 " Kill current terminal 
 nnoremap <silent> <leader>tk :FloatermKill<CR>:FloatermPrev<CR>
 tnoremap <silent> <leader>tk <C-\><C-n>:FloatermKill<CR>:FloatermPrev<CR>
