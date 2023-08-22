@@ -2,9 +2,9 @@ nmap <leader>b :FloatermFocus<CR>
 nmap <C-c> :FloatermToggle<CR>
 
 let g:floaterm_position = 'topright'
-let g:floaterm_width = 0.6
-let g:floaterm_height = 0.8
-let g:floaterm_title = 'Terminal $1/$2'
+let g:floaterm_width = 0.5
+let g:floaterm_height = 0.6
+let g:floaterm_title = 'Console $1/$2'
 let g:floaterm_wintype = 'float'
 let g:floaterm_rootmarkers = ['.pro']
 if has('win32')
@@ -22,9 +22,12 @@ autocmd User FloatermOpen        " triggered after opening a new/existed floater
 " => Hotkey to manage terminals
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Open a new terminal 
-nnoremap <silent> <leader>to    :FloatermNew<CR>
-tnoremap <silent> <leader>to    <C-\><C-n>:FloatermNew<CR>
+nnoremap <silent>   <F9>    :FloatermNew<CR>
+tnoremap <silent>   <F5>    <C-\><C-n>:FloatermNew<CR>
 
+
+nmap <silent>   <C-F9>    :FloatermKill<CR>
+tnoremap <silent>   <C-F9>    <C-\><C-n>:FloatermKill<CR>
 " Kill current terminal 
 nnoremap <silent> <leader>tk :FloatermKill<CR>:FloatermPrev<CR>
 tnoremap <silent> <leader>tk <C-\><C-n>:FloatermKill<CR>:FloatermPrev<CR>
@@ -36,9 +39,8 @@ nnoremap <silent> <leader>tp :FloatermPrev<CR>
 tnoremap <silent> <leader>tp <C-\><C-n>:FloatermPrev<CR>
 
 " Toggle terminal
-nnoremap <silent> <leader>tt :FloatermToggle<CR>
-tnoremap <silent> <leader>tt <C-\><C-n>:FloatermToggle<CR>
-
+map <silent> <F5> :FloatermToggle<CR>
+map <silent> <C-F5> :FloatermKill<CR>
 " Focus terminal 
 nnoremap <silent> <leader>tf <C-\><C-n><C-W><Left>
 tnoremap <silent> <leader>tf <C-\><C-n><C-W><Left>

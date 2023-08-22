@@ -13,7 +13,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Code intellisense
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'jiangmiao/auto-pairs'      " Parenthesis auto 
 
 " File browser
@@ -40,6 +41,7 @@ Plug 'projekt0n/github-nvim-theme', { 'tag': 'v0.0.7' }
 "Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 "Plug 'ycm-core/YouCompleteMe'
 "Initialize plugin system
+Plug 'prabirshrestha/vim-lsp'
 call plug#end()
 
 set bg=dark
@@ -50,7 +52,7 @@ set ignorecase
 set belloff=all
 set foldmethod=indent
 
-
+nmap <C-F9> :FloatermToggle<CR>
 nmap <leader>n :NERDTreeFocus<CR>
 nmap <C-n> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
