@@ -1,13 +1,17 @@
-nmap <leader>n :NERDTreeFocus<CR>
-nmap <C-n> :NERDTreeToggle<CR>
-vmap ++ <plug>NERDCommenterToggle
-nmap ++ <plug>NERDCommenterToggle
+" F5 to toggle 
+map <silent> <F5> :NERDTreeToggle<CR>
+
+" Open the existing NERDTree on each new tab.
+"autocmd BufWinEnter * silent NERDTreeMirror
 
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
+" Change arrow to expand/collapse tree
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
+
+"let NERDTreeMapOpenInTab='<ENTER>'
 
 " Git status icon
 let g:NERDTreeGitStatusIndicatorMapCustom = {
@@ -42,4 +46,3 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 
 " Ignore some type of files: 
 let NERDTreeIgnore=['__pycache__', 'site-packages']
-
