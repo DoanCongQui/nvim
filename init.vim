@@ -8,8 +8,8 @@ set ignorecase
 set belloff=all
 set smarttab
 set cindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=3
+set shiftwidth=3
 " always uses spaces instead of tab characters
 set expandtab
 set laststatus=2
@@ -76,6 +76,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdcommente'                   
 
 Plug 'ryanoasis/vim-devicons'                   "Icon
+
+"Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 colorscheme onedark

@@ -9,7 +9,8 @@ let g:coc_global_extensions = [
   \ 'coc-html',
   \ 'coc-clangd',
   \ 'coc-java',
-  \ 'coc-css'
+  \ 'coc-css',
+  \ 'coc-python'
   \ ]
 
 " May need for Vim (not Neovim) since coc.nvim calculates byte offset by count
